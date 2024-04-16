@@ -6,3 +6,13 @@ let carros = [
     { modelo: "Chevrolet Cruze", ano: 2019, precoDia: 85, disponivel: true },
     { modelo: "Volkswagen Golf", ano: 2020, precoDia: 95, disponivel: true }
 ];
+
+let carrosDisponiveis = [];
+
+for (let carro in carros) {
+    if (carros[carro].disponivel === true) {
+        carrosDisponiveis.push({ modelo: carros[carro].modelo, precoDia: carros[carro].precoDia });
+    }
+};
+
+console.log(carrosDisponiveis);
