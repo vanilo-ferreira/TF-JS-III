@@ -55,12 +55,12 @@ let valoresDaLocacao = [];
 for (let i = 0; i < clientes.length; i++) {
     for (let carro in carrosDisponiveis) {
         if (clientes[i].modelo === carrosDisponiveis[carro].modelo) {
-            valoresDaLocacao.push({ cliente: clientes[i].nome, precoTotalLocacao: (carrosDisponiveis[carro].precoDia * clientes[i].dias), dias: clientes[i].dias});
+            valoresDaLocacao.push({ cliente: clientes[i].nome, precoTotalLocacao: (carrosDisponiveis[carro].precoDia * clientes[i].dias), dias: clientes[i].dias, modelo: clientes[i].modelo});
         }
     };
 }
 
 console.log("Valores da locação por cliente (CARROS DISPONÍVEIS):\n")
 for (let i = 0; i < valoresDaLocacao.length; i++) {
-    console.log(`${i+1}) ${valoresDaLocacao[i].cliente} o valor total da locação por ${valoresDaLocacao[i].dias} dias é R$ ${valoresDaLocacao[i].precoTotalLocacao}.`);
+    console.log(`${i+1}) ${valoresDaLocacao[i].cliente}, o valor total da locação, do ${valoresDaLocacao[i].modelo} por ${valoresDaLocacao[i].dias} dias é R$ ${valoresDaLocacao[i].precoTotalLocacao}.`);
 }
